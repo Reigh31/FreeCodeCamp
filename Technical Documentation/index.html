@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>A Guide to Laravel</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>Laravel Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction_to_Larvel">Introduction to Larvel</a></li>
+            <li><a class="nav-link" href="#Prerequisites">Prerequisites</a></li>
+            <li><a class="nav-link" href="#Setting_up_Laravel">Setting up Laravel</a></li>
+            <li><a class="nav-link" href="#Confugring_Authentication">Confugring Authentication</a></li>
+            <li><a class="nav-link" href="#Testing_Authentication">Testing Authentication</a></li>
+        </ul>
+    </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction_to_Larvel">
+                <header>Introduction to Larvel</header>
+                <p>User authentication is a crucial aspect of web application security.
+                    This guide provides a step-by-step approach to implementing user authentication in a Laravel application.
+                    By the end of this documentation, you will have a functional
+                    authentication system that includes registration, login, and logout features.</p>
+            </section>
+            <section class="pre" class="main-section" id="Prerequisites">
+                <header>Prerequisites</header>
+                <p>Before starting, ensure you have the following installed:</p>
+                <ul>
+                    <li>PHP (version 7.3 or higher)</li>
+                    <li>Composer</li>
+                    <li>Laravel (version 8 or higher)</li>
+                    <li>A web server (e.g., XAMPP, WAMP, or Laravel Valet)</li>
+                    <li>A database (e.g., MySQL)</li>
+                </ul>
+            </section>
+            <section class="main-section" id="Setting_up_Laravel">
+                <header>Setting up Laravel</header>
+                <ol>
+                    <li>Install Laravel
+                        <p>If you haven't installed Laravel yet, you can do so using Composer</p>
+                        <code>composer create-project --prefer-dist laravel/laravel your-project-name</code>
+                        <hr>
+                    </li>
+                    <li>Configure Database
+                        <p>Update your .env file to configure your database connection</p>
+                        <code>
+                            DB_CONNECTION=mysql<br>
+                            DB_HOST=127.0.0.1<br>
+                            DB_PORT=3306<br>
+                            DB_DATABASE=your_database_name<br>
+                            DB_USERNAME=your_username<br>
+                            DB_PASSWORD=your_password
+                            </code>
+                            <hr>
+                    </li>
+                    <li>Install Laravel UI
+                        <p>Laravel UI provides a simple way to scaffold all of the routes and views needed for authentication</p>
+                        <code>
+                            composer require laravel/ui
+                        </code>
+                        <hr>
+                    </li>
+                    <li>Generate Auth Scaffolding
+                        <p>You can generate the necessary authentication views using the following command</p>
+                        <code>
+                            php artisan ui vue --auth
+                        </code>
+                        <hr>
+                    </li>
+                    <li>Run Migrations
+                        <p>Run the migrations to create the necessary tables in your database</p>
+                        <code>
+                            php artisan migrate
+                        </code>
+                        <br>
+                    </li>
+                </ol>
+            </section>
+            <section class="main-section" id="Confugring_Authentication">
+                <header>Confugring Authentication</header>
+                <p>If you need to customize the authentication logic, you can do so by modifying
+                     the LoginController, RegisterController, and ResetPasswordController
+                      located in the app/Http/Controllers/Auth directory.</p>
+                      <code>
+                        protected function validator(array $data)
+{
+    return Validator::make($data, [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+    ]);
+}
+                      </code>
+            </section>
+            <section class="main-section" id="Testing_Authentication">
+                <header>Testing Authentication</header>
+                <p>Start the Development Server
+                    Start your Laravel development server:</p>
+                <code>
+                    php artisan serve
+                </code>
+                <br>
+            </section>
+            <footer>
+                <em>References:</em>
+            </footer>
+            <section class="ref">
+                <p><a href="https://laravel.com/docs/10.x/installation"><em>Installation:</em></a> This section covers how to install Laravel using Composer.</p>
+                <p><a href="https://laravel.com/docs/10.x/configuration"><em>Configuration:</em></a> This section details how to configure your Laravel application, including database settings.</p>
+                <p><a href="https://github.com/laravel/ui"><em>Laravel UI:</em></a> This package provides a way to scaffold basic UI with authentication.</p>
+                <p><a href="https://laravel.com/docs/10.x/authentication"><em>Authentication:</em></a> This guide provides an overview of the built-in authentication system in Laravel.</p>
+                <p><a href="https://laravel.com/docs/10.x/migrations"><em>Database: Migrations:</em></a> This section explains how to run database migrations.</p>
+                <p><a href="https://laravel.com/docs/10.x/artisan"><em>Running Artisan Commands:</em></a> This guide explains how to use Artisan, Laravel's command-line interface.</p>
+            </section>
+        </main>
+</body>
+</html>

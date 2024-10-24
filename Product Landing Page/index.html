@@ -4,20 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/2820e2dd9d.js" crossorigin="anonymous"></script>
     <title>Product Landing Page</title>
 </head>
 <body>
     <header id="header">
     <div class="logo">
-        <img class="header-img" src="C:\Users\My Computer\Desktop\FreeCodeCamp\Product Landing Page\Images\ye.png" alt="Logo">
+        <img class="header-img" src="Images/ye.png" alt="Logo">
     </div>
     <nav id="nav-bar">
         <ul>
-            <li id="nav-link"><a href="">Features</a>
-            <li id="nav-link"><a href="">Gaming Performance</a>
-            <li id="nav-link"><a href="">Prcies</a>
+            <li><a class="nav-link" href="#Features">Features</a>
+            <li><a class="nav-link" href="#gaming_performance">Gaming Performance</a>
+            <li><a class="nav-link" href="#gaming_optimization">Gaming Optimization</a>
         </ul>
     </nav>
 </header>
+<section id="product">
+    <h2>ROG STRIX B450-F GAMING</h2>
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input type="email" id="email" placeholder="Enter your email address" required>
+        <input type="submit" id="submit" value="Get Started!">
+    </form>
+</section>
+<div class="container">
+    <div id="Features"></div>
+        <div class="grind"></div>
+            <div class="icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="desc"></div>
+            <h2>Improved DDR4 Stability</h2>
+            <p>Tuned to take full advantage of Ryzen's capabilities,
+                and ready for the latest memory kits,
+                ROG Strix B450 Gaming Series motherboards are built
+                specifically for high-performance gaming rigs.
+                Intelligent firmware delivers the plug-and-play
+                experience that first-time DIYers demand and the 
+                essential tuning options that performance-addicts need.
+                Maximize frame rates with a high-bandwidth memory kit or leverage
+                a host of tuning options to extract peak performance potential from a modest setup.
+                Load up any way you want and get into the game with ROG Strix B450 Gaming Series motherboards.
+            </p>
+    <div id="gaming_performance"></div>
+    <div id="gaming_optimization"></div>
+</div>
 </body>
 </html>

@@ -1,1 +1,0 @@
-"No copyright infringement intended. All rights and credits go to the respective owners."
